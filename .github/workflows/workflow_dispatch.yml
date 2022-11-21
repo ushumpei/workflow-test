@@ -18,7 +18,7 @@ jobs:
             changes:
               - 'changes/**'
 
-      - if: steps.changes.outpus.changes == 'true'
+      - if: steps.changes.outputs.changes == 'true'
         run: echo changed
 
       - run: cat $GITHUB_EVENT_PATH
