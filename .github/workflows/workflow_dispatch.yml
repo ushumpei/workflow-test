@@ -1,11 +1,12 @@
 name: Workflow dispatch
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    paths:
+      - 'changes/**'
 jobs:
-  migrate:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
-      - name: Echo
-        run:
-          echo Run
+      - run: cat $GITHUB_EVENT_PATH
