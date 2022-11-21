@@ -21,4 +21,6 @@ jobs:
       - if: steps.changes.outputs.changes == 'true'
         run: echo changed
 
+      - run: echo ${{ steps.changes.outputs.changes }}
+
       - run: cat $GITHUB_EVENT_PATH
