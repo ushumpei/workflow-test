@@ -15,7 +15,7 @@ jobs:
       - uses: dorny/paths-filter@v2
         id: changed
         with:
-          base: ${{ github.ref }}
+          base: ${{ github.repository.default_branch }}
           filters: |
             changes:
               - 'changes/**'
