@@ -11,4 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            changes:
+              - 'changes/**'
+
+      - if: steps.changes.outpus.changes == 'true'
+        run: echo changed
+
       - run: cat $GITHUB_EVENT_PATH
