@@ -1,13 +1,11 @@
 name: Workflow dispatch
 on:
   push:
-    branchs:
+    branches:
       - main
   workflow_dispatch:
-    branchs:
+    branches:
       - main
-    paths:
-      - 'changes/**'
 jobs:
   test:
     runs-on: ubuntu-latest
