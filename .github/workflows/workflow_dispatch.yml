@@ -1,0 +1,11 @@
+name: Workflow dispatch
+on: [workflow_dispatch]
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Echo
+        run:
+          echo Run
